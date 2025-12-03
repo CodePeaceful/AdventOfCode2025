@@ -5,6 +5,7 @@
 #include <ranges>
 #include <stdexcept>
 #include <print>
+#include <numeric>
 
 std::vector<std::string> getFile() {
     std::ifstream in("data.txt");
