@@ -21,7 +21,7 @@ std::vector<std::string> getFile() {
 }
 
 std::vector<std::string> split(const std::string& str, char seperator) {
-    return str | std::views::split(seperator) | std::views::transform([](auto s) {return std::string(s.begin(), s.end()); }) | std::ranges::to<std::vector>();
+    return str | std::views::split(seperator) | std::views::transform([](auto s) {return std::string(s.begin(), s.end()); }) | std::views::filter([](const auto& s) {return !s.empty(); }) | std::ranges::to<std::vector>();
 }
 
 // size < 32 bit singed integer limit
