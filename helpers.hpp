@@ -27,7 +27,7 @@ std::vector<std::string> split(const std::string& str, char seperator) {
 // size < 32 bit singed integer limit
 template<typename T>
 int findIndex(std::vector<T>& v, T val) {
-    for (int i = 0; i < v.size(); ++i) {
+    for (int i = 0; i < static_cast<int>(v.size()); ++i) {
         if (v[i] == val) {
             return i;
         }
